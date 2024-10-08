@@ -1,4 +1,4 @@
-# LoFTR-Stitch
+# LoFTR-Stitch  
 应该是目前Github效果最好的**通过深度学习**进行特征提取匹配的图像拼接应用
 
 ## WHY
