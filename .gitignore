@@ -134,3 +134,6 @@ dmypy.json
 test_imgs/
 test_imgs2/
 result*
+
+testdatasets/
+weights/

@@ -367,13 +367,14 @@ class loftrInfer(object):
 if __name__ == "__main__":
     # 调用实例
     testInfer = loftrInfer(model_path="weights/indoor_ds.ckpt")
+    # testInfer = loftrInfer(model_path="weights/epoch=4-auc@5=0.038-auc@10=0.080-auc@20=0.153.ckpt")
     # img1_pth = "assets/scannet_sample_images/scene0768_00_frame-001095.jpg"
     # img0_pth = "assets/scannet_sample_images/scene0768_00_frame-003435.jpg"
     
     # img1_pth = "test_imgs/1.jpg"
     # img0_pth = "test_imgs/0.jpg"
     
-    img_dir = r'./test_imgs2'
+    img_dir = r'testdatasets/wz0701003-4'
     img_path_l = os.listdir(img_dir)
     img_path_l = sorted(img_path_l,key=lambda a: int(a.split('-')[-1].replace('.jpg','').replace('.png','')))
     img_path_l = [ os.path.join(img_dir,i) for i in img_path_l]
@@ -385,8 +386,8 @@ if __name__ == "__main__":
     
         img1_bgr = cv2.imread(img1_pth)
 
-        result = testInfer.run(left_img, img1_bgr, lenth=600, use_kmeans=True, if_draw=True, if_save=False,
+        result = testInfer.run(left_img, img1_bgr, lenth=100, use_kmeans=True, if_draw=True, if_save=False,
                             stitch_method=0)
         left_img = result
-        cv2.imwrite(f'result_{no}.jpg',result)
+        cv2.imwrite(f'new_result_{no}.jpg',result)
         no += 1
